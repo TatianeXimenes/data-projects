@@ -1,0 +1,101 @@
+nome,data_nascimento,municipio_nascimento,sexo,id_unico
+_ok Pedro Gomes,15/fevereiro/1997,Curitiba,M,1
+Camila _ok Monteiro,2001/07/16,Rio de Janeiro,M,2
+_ok Ricardo Teixeira,12/fevereiro/1973,Salvador,F,3
+Paula Azevedo NULL,1990/06/15,Rio de Janeiro,F,4
+Fernanda Martins NULL,08/junho/2010,Belo Horizonte,M,5
+Rafael Lima,08/junho/1976,Porto Alegre,M,6
+NULL Sofia Melo,20/11/2003,Curitiba,M,7
+  André Pinto,13/outubro/2008,Fortaleza,F,8
+123 Bruno Santos,07/01/1971,Rio de Janeiro,M,9
+@ Carla Nogueira,20/10/1997,Manaus,F,10
+Maria Silva temp,1985/11/09,Rio de Janeiro,M,11
+temp Beatriz Costa,06/fevereiro/2002,Belo Horizonte,M,12
+Ricardo Teixeira,16/janeiro/1978,Recife,F,13
+teste Camila Monteiro,04/08/1997,Curitiba,M,14
+Carla Nogueira,15/fevereiro/2010,Manaus,M,15
+### Maria Silva,24/dezembro/1976,Porto Alegre,M,16
+Paula sem dado Azevedo,10/setembro/1974,Recife,M,17
+Rafael @ Lima,1994/12/27,São Paulo,F,18
+Aline Barbosa sem dado,2009/08/26,Manaus,M,19
+João Souza,26/05/1978,Rio de Janeiro,M,20
+Ricardo Teixeira,04/março/1993,Recife,F,21
+XX Ricardo Teixeira,05/janeiro/1990,Salvador,F,22
+Pedro Gomes,27/fevereiro/1985,São Paulo,M,23
+Maria Silva,25/outubro/1995,Rio de Janeiro,M,24
+Marcos Fernandes,07/junho/2009,Curitiba,F,25
+Paula sem dado Azevedo,17/01/2010,Porto Alegre,M,26
+Bruno Santos,09/12/1974,Manaus,M,27
+André Pinto,02/12/1984,Salvador,F,28
+Beatriz Costa,1992/01/15,São Paulo,F,29
+Fernanda Martins temp,08/setembro/1976,Recife,M,30
+Carlos Pereira XX,09/02/1998,Recife,F,31
+NULL Aline Barbosa,22/fevereiro/1996,São Paulo,F,32
+Fernanda Martins teste,1986/05/26,Brasília,F,33
+Ricardo Teixeira 123,21/outubro/1993,Brasília,F,34
+André Pinto @,1993/01/06,Brasília,F,35
+Juliana Almeida,09/novembro/1989,Salvador,F,36
+André Pinto,1973/04/07,Rio de Janeiro,M,37
+Ana 123 Oliveira,2001/05/14,Recife,M,38
+sem dado Carlos Pereira,16/04/2001,Salvador,F,39
+Juliana Almeida,1987/03/17,Salvador,F,40
+teste Paula Azevedo,2001/01/17,São Paulo,M,41
+Lucas Rocha  ,18/06/1982,Rio de Janeiro,F,42
+Fernanda Martins,27/outubro/1993,Brasília,F,43
+### Aline Barbosa,11/06/2003,Brasília,M,44
+NULL Felipe Ribeiro,1998/05/16,Porto Alegre,F,45
+Pedro Gomes,08/12/2003,Fortaleza,M,46
+Pedro Gomes,13/março/1973,Manaus,M,47
+temp Juliana Almeida,1987/08/15,Brasília,F,48
+Lucas Rocha,27/janeiro/1981,Curitiba,M,49
+Aline Barbosa,02/julho/1977,Rio de Janeiro,M,50
+Camila Monteiro,1974/09/20,Brasília,M,51
+Rafael Lima,13/fevereiro/2004,Rio de Janeiro,F,52
+Beatriz temp Costa,2006/08/13,Curitiba,F,53
+Fernanda Martins,1985/10/17,Curitiba,M,54
+Ricardo Teixeira _ok,15/maio/2006,São Paulo,F,55
+Paula Azevedo ###,13/dezembro/1999,Curitiba,F,56
+Ana Oliveira,1985/05/04,Fortaleza,M,57
+123 Felipe Ribeiro,2003/11/24,Curitiba,M,58
+@ André Pinto,1984/11/23,Porto Alegre,F,59
+sem dado Carla Nogueira,09/11/2008,Belo Horizonte,F,60
+Rafael Lima -,1976/04/17,Fortaleza,M,61
+NULL Carla Nogueira,02/junho/1976,Salvador,M,62
+Felipe Ribeiro,15/04/1994,Manaus,F,63
+Bruno - Santos,23/08/2003,Curitiba,M,64
+Beatriz Costa temp,2001/02/07,Salvador,F,65
+Beatriz Costa  ,1982/05/17,Recife,F,66
+Pedro Gomes  ,1999/07/11,Manaus,F,67
+### Beatriz Costa,10/05/1975,Curitiba,F,68
+André Pinto XX,06/12/1982,Recife,F,69
+Lucas Rocha _ok,09/abril/2004,Recife,F,70
+Felipe Ribeiro,1974/11/11,Fortaleza,F,71
+Beatriz Costa,2007/01/08,São Paulo,M,72
+123 Juliana Almeida,16/julho/2010,São Paulo,M,73
+Bruno Santos teste,16/abril/1979,Manaus,M,74
+  Ricardo Teixeira,25/11/1985,Brasília,M,75
+Felipe Ribeiro _ok,10/dezembro/1980,Brasília,F,76
+Marcos Fernandes,27/03/1994,Rio de Janeiro,M,77
+Sofia 123 Melo,1973/07/15,Porto Alegre,M,78
+### Beatriz Costa,22/agosto/1979,São Paulo,F,79
+XX Rafael Lima,12/02/1970,Porto Alegre,M,80
+- Carla Nogueira,20/agosto/1984,Curitiba,F,81
+Fernanda Martins,1978/08/27,Belo Horizonte,F,82
+Paula @ Azevedo,01/abril/1985,Fortaleza,F,83
+Lucas temp Rocha,24/fevereiro/2002,Recife,F,84
+NULL Juliana Almeida,1988/07/04,Porto Alegre,F,85
+Juliana Almeida,04/03/2006,Recife,M,86
+Sofia Melo,08/junho/1973,Fortaleza,M,87
+123 Fernanda Martins,26/novembro/1989,Manaus,F,88
+NULL Lucas Rocha,27/01/1982,Rio de Janeiro,F,89
+_ok Ana Oliveira,05/agosto/1985,Curitiba,F,90
+Felipe Ribeiro,11/09/2000,Rio de Janeiro,M,91
+Sofia   Melo,03/julho/1980,Recife,M,92
+Bruno Santos,12/abril/1990,Belo Horizonte,M,93
+teste Camila Monteiro,02/05/1985,Recife,M,94
+Ana Oliveira,23/julho/1995,Salvador,M,95
+Aline Barbosa,24/10/2008,São Paulo,M,96
+  Paula Azevedo,2009/06/09,Curitiba,F,97
+Fernanda Martins _ok,04/04/1986,Curitiba,F,98
+Sofia Melo,26/09/1981,Salvador,M,99
+Camila Monteiro NULL,1994/09/14,São Paulo,F,100

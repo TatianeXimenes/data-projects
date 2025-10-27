@@ -1,0 +1,101 @@
+municipio_nascimento,sexo,id_unico,data_nascimento,nome
+Curitiba,M,1,1997/02/15,Pedro Gomes
+Rio de Janeiro,M,2,2001/07/16,Camila Monteiro
+Salvador,F,3,1973/02/12,Ricardo Teixeira
+Rio de Janeiro,F,4,1990/06/15,Paula Azevedo
+Belo Horizonte,M,5,2010/06/08,Fernanda Martins
+Porto Alegre,M,6,1976/06/08,Rafael Lima
+Curitiba,M,7,2003/11/20,Sofia Melo
+Fortaleza,F,8,2008/10/13,André Pinto
+Rio de Janeiro,M,9,1971/01/07,Bruno Santos
+Manaus,F,10,1997/10/20,Carla Nogueira
+Rio de Janeiro,M,11,1985/11/09,Maria Silva
+Belo Horizonte,M,12,2002/02/06,Beatriz Costa
+Recife,F,13,1978/01/16,Ricardo Teixeira
+Curitiba,M,14,1997/08/04,Camila Monteiro
+Manaus,M,15,2010/02/15,Carla Nogueira
+Porto Alegre,M,16,1976/12/24,Maria Silva
+Recife,M,17,1974/09/10,Paula Azevedo
+São Paulo,F,18,1994/12/27,Rafael Lima
+Manaus,M,19,2009/08/26,Aline Barbosa
+Rio de Janeiro,M,20,1978/05/26,João Souza
+Recife,F,21,1993/03/04,Ricardo Teixeira
+Salvador,F,22,1990/01/05,Ricardo Teixeira
+São Paulo,M,23,1985/02/27,Pedro Gomes
+Rio de Janeiro,M,24,1995/10/25,Maria Silva
+Curitiba,F,25,2009/06/07,Marcos Fernandes
+Porto Alegre,M,26,2010/01/17,Paula Azevedo
+Manaus,M,27,1974/12/09,Bruno Santos
+Salvador,F,28,1984/12/02,André Pinto
+São Paulo,F,29,1992/01/15,Beatriz Costa
+Recife,M,30,1976/09/08,Fernanda Martins
+Recife,F,31,1998/02/09,Carlos Pereira
+São Paulo,F,32,1996/02/22,Aline Barbosa
+Brasília,F,33,1986/05/26,Fernanda Martins
+Brasília,F,34,1993/10/21,Ricardo Teixeira
+Brasília,F,35,1993/01/06,André Pinto
+Salvador,F,36,1989/11/09,Juliana Almeida
+Rio de Janeiro,M,37,1973/04/07,André Pinto
+Recife,M,38,2001/05/14,Ana Oliveira
+Salvador,F,39,2001/04/16,Carlos Pereira
+Salvador,F,40,1987/03/17,Juliana Almeida
+São Paulo,M,41,2001/01/17,Paula Azevedo
+Rio de Janeiro,F,42,1982/06/18,Lucas Rocha
+Brasília,F,43,1993/10/27,Fernanda Martins
+Brasília,M,44,2003/06/11,Aline Barbosa
+Porto Alegre,F,45,1998/05/16,Felipe Ribeiro
+Fortaleza,M,46,2003/12/08,Pedro Gomes
+Manaus,M,47,1973/03/13,Pedro Gomes
+Brasília,F,48,1987/08/15,Juliana Almeida
+Curitiba,M,49,1981/01/27,Lucas Rocha
+Rio de Janeiro,M,50,1977/07/02,Aline Barbosa
+Brasília,M,51,1974/09/20,Camila Monteiro
+Rio de Janeiro,F,52,2004/02/13,Rafael Lima
+Curitiba,F,53,2006/08/13,Beatriz Costa
+Curitiba,M,54,1985/10/17,Fernanda Martins
+São Paulo,F,55,2006/05/15,Ricardo Teixeira
+Curitiba,F,56,1999/12/13,Paula Azevedo
+Fortaleza,M,57,1985/05/04,Ana Oliveira
+Curitiba,M,58,2003/11/24,Felipe Ribeiro
+Porto Alegre,F,59,1984/11/23,André Pinto
+Belo Horizonte,F,60,2008/11/09,Carla Nogueira
+Fortaleza,M,61,1976/04/17,Rafael Lima
+Salvador,M,62,1976/06/02,Carla Nogueira
+Manaus,F,63,1994/04/15,Felipe Ribeiro
+Curitiba,M,64,2003/08/23,Bruno Santos
+Salvador,F,65,2001/02/07,Beatriz Costa
+Recife,F,66,1982/05/17,Beatriz Costa
+Manaus,F,67,1999/07/11,Pedro Gomes
+Curitiba,F,68,1975/05/10,Beatriz Costa
+Recife,F,69,1982/12/06,André Pinto
+Recife,F,70,2004/04/09,Lucas Rocha
+Fortaleza,F,71,1974/11/11,Felipe Ribeiro
+São Paulo,M,72,2007/01/08,Beatriz Costa
+São Paulo,M,73,2010/07/16,Juliana Almeida
+Manaus,M,74,1979/04/16,Bruno Santos
+Brasília,M,75,1985/11/25,Ricardo Teixeira
+Brasília,F,76,1980/12/10,Felipe Ribeiro
+Rio de Janeiro,M,77,1994/03/27,Marcos Fernandes
+Porto Alegre,M,78,1973/07/15,Sofia Melo
+São Paulo,F,79,1979/08/22,Beatriz Costa
+Porto Alegre,M,80,1970/02/12,Rafael Lima
+Curitiba,F,81,1984/08/20,Carla Nogueira
+Belo Horizonte,F,82,1978/08/27,Fernanda Martins
+Fortaleza,F,83,1985/04/01,Paula Azevedo
+Recife,F,84,2002/02/24,Lucas Rocha
+Porto Alegre,F,85,1988/07/04,Juliana Almeida
+Recife,M,86,2006/03/04,Juliana Almeida
+Fortaleza,M,87,1973/06/08,Sofia Melo
+Manaus,F,88,1989/11/26,Fernanda Martins
+Rio de Janeiro,F,89,1982/01/27,Lucas Rocha
+Curitiba,F,90,1985/08/05,Ana Oliveira
+Rio de Janeiro,M,91,2000/09/11,Felipe Ribeiro
+Recife,M,92,1980/07/03,Sofia Melo
+Belo Horizonte,M,93,1990/04/12,Bruno Santos
+Recife,M,94,1985/05/02,Camila Monteiro
+Salvador,M,95,1995/07/23,Ana Oliveira
+São Paulo,M,96,2008/10/24,Aline Barbosa
+Curitiba,F,97,2009/06/09,Paula Azevedo
+Curitiba,F,98,1986/04/04,Fernanda Martins
+Salvador,M,99,1981/09/26,Sofia Melo
+São Paulo,F,100,1994/09/14,Camila Monteiro

@@ -21,7 +21,6 @@ Aqui você encontrará análises, pipelines ETL, dashboards e modelos preditivos
 ## 🚀 Objetivos 
 - Demonstrar domínio técnico nas linguagens **Python**, **R** e **SQL**.  
 - Mostrar experiência prática em **Data Cleaning**, **Análise**, **Machine Learning** e **Visualização**.  
-- Construir uma narrativa coerente para entrevistas e redes profissionais.
 
 ---
 
@@ -37,5 +36,5 @@ Aqui você encontrará análises, pipelines ETL, dashboards e modelos preditivos
 ## 💬 Contato
 👩‍💻 Tatiane Ximenes  
 📧 [ximenes_taty@hotmail.com]  
-🔗 [LinkedIn]([https://linkedin.com/in/tatiane-ximenes-755677200/]) 
+🔗 [LinkedIn]([https://linkedin.com/in/tatiane-ximenes-755677200/])   
 📂 [GitHub](https://github.com/TatianeXimenes)

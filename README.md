@@ -37,5 +37,5 @@ Aqui você encontrará análises, pipelines ETL, dashboards e modelos preditivos
 ## 💬 Contato
 👩‍💻 Tatiane Ximenes  
 📧 [ximenes_taty@hotmail.com]  
-🔗 [LinkedIn]([https://linkedin.com/in/tatiane-ximenes-755677200/])  
+🔗 [LinkedIn]([https://linkedin.com/in/tatiane-ximenes-755677200])
 📂 [GitHub](https://github.com/TatianeXimenes)

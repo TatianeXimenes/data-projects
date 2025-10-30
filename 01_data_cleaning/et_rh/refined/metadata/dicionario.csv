@@ -1,0 +1,25 @@
+var,new_var,new_type,map_values
+Employee ID,employee_id,String,{}
+Age,age,Integer,{}
+Gender,gender,Byte,"{'Female':'1','Male':'2'}"
+Years at Company,years_at_company,Integer,{}
+Job Role,job_role,Byte,"{'Education':'1','Healthcare':'2','Finance':'3','Media':'4','Technology':'5'}"
+Monthly Income,monthly_income,Integer,{}
+Work-Life Balance,work_life_balance,Byte,"{'Excellent':'1','Good':'2','Fair':'3','Poor':'4'}"
+Job Satisfaction,job_satisfaction,Byte,"{'High':'1','Very High':'2','Medium':'3','Low':'4'}"
+Performance Rating,performance_rating,Byte,"{'High':'1','Low':'2','Average':'3','Below Average':'4'}"
+Number of Promotions,number_of_promotions,Integer,{}
+Overtime,overtime,Byte,"{'Yes':'1','No':'2'}"
+Distance from Home,distance_from_home,Integer,{}
+Education Level,education_level,Byte,"{'High School':'1','Masters Degree':'2','PhD':'3','Bachelors Degree':'4','Associate Degree':'5'}"
+Marital Status,marital_status,Byte,"{'Married':'1','Divorced':'2','Single':'3'}"
+Number of Dependents,number_of_dependents,Integer,{}
+Job Level,job_level,Byte,"{'Senior':'1','Mid':'2','Entry':'3'}"
+Company Size,company_size,Byte,"{'Medium':'1','Small':'2','Large':'3'}"
+Company Tenure,company_tenure,Integer,{}
+Remote Work,remote_work,Byte,"{'Yes':'1','No':'2'}"
+Leadership Opportunities,leadership_opportunities,Byte,"{'Yes':'1','No':'2'}"
+Innovation Opportunities,innovation_opportunities,Byte,"{'Yes':'1','No':'2'}"
+Company Reputation,company_reputation,Byte,"{'Excellent':'1','Good':'2','Fair':'3','Poor':'4'}"
+Employee Recognition,employee_recognition,Byte,"{'High':'1','Very High':'2','Medium':'3','Low':'4'}"
+Attrition,attrition,Byte,"{'Left':'1','Stayed':'2'}"

@@ -1,0 +1,164 @@
+SELECT * FROM tabela_rh;
+
+-- Criação de view textual
+CREATE OR REPLACE VIEW tabela_rh_textual AS
+SELECT
+    employee_id,
+    age,
+    CASE gender WHEN '1' THEN 'Female' WHEN '2' THEN 'Male' END AS gender,
+    years_at_company,
+    CASE job_role 
+        WHEN '1' THEN 'Education'
+        WHEN '2' THEN 'Healthcare'
+        WHEN '3' THEN 'Finance'
+        WHEN '4' THEN 'Media'
+        WHEN '5' THEN 'Technology'
+    END AS job_role,
+    monthly_income,
+    CASE work_life_balance
+        WHEN '1' THEN 'Excellent'
+        WHEN '2' THEN 'Good'
+        WHEN '3' THEN 'Fair'
+        WHEN '4' THEN 'Poor'
+    END AS work_life_balance,
+    CASE job_satisfaction
+        WHEN '1' THEN 'High'
+        WHEN '2' THEN 'Very High'
+        WHEN '3' THEN 'Medium'
+        WHEN '4' THEN 'Low'
+    END AS job_satisfaction,
+    CASE performance_rating
+        WHEN '1' THEN 'High'
+        WHEN '2' THEN 'Low'
+        WHEN '3' THEN 'Average'
+        WHEN '4' THEN 'Below Average'
+    END AS performance_rating,
+    number_of_promotions,
+    CASE overtime WHEN '1' THEN 'Yes' WHEN '2' THEN 'No' END AS overtime,
+    distance_from_home,
+    CASE education_level
+        WHEN '1' THEN 'High School'
+        WHEN '2' THEN 'Masters Degree'
+        WHEN '3' THEN 'PhD'
+        WHEN '4' THEN 'Bachelors Degree'
+        WHEN '5' THEN 'Associate Degree'
+    END AS education_level,
+    CASE marital_status WHEN '1' THEN 'Married' WHEN '2' THEN 'Divorced' WHEN '3' THEN 'Single' END AS marital_status,
+    number_of_dependents,
+    CASE job_level WHEN '1' THEN 'Senior' WHEN '2' THEN 'Mid' WHEN '3' THEN 'Entry' END AS job_level,
+    CASE company_size WHEN '1' THEN 'Medium' WHEN '2' THEN 'Small' WHEN '3' THEN 'Large' END AS company_size,
+    company_tenure,
+    CASE remote_work WHEN '1' THEN 'Yes' WHEN '2' THEN 'No' END AS remote_work,
+    CASE leadership_opportunities WHEN '1' THEN 'Yes' WHEN '2' THEN 'No' END AS leadership_opportunities,
+    CASE innovation_opportunities WHEN '1' THEN 'Yes' WHEN '2' THEN 'No' END AS innovation_opportunities,
+    CASE company_reputation WHEN '1' THEN 'Excellent' WHEN '2' THEN 'Good' WHEN '3' THEN 'Fair' WHEN '4' THEN 'Poor' END AS company_reputation,
+    CASE employee_recognition WHEN '1' THEN 'High' WHEN '2' THEN 'Very High' WHEN '3' THEN 'Medium' WHEN '4' THEN 'Low' END AS employee_recognition,
+    CASE attrition WHEN '1' THEN 'Left' WHEN '2' THEN 'Stayed' END AS attrition
+FROM tabela_rh;
+
+-- Métricas básicas de contagem e resumo
+-- 1. total de funcionários
+SELECT COUNT(*) AS total_employees
+FROM tabela_rh;
+
+-- 2. Número de funcionários por gênero
+SELECT gender, COUNT(*) AS total
+FROM tabela_rh
+GROUP BY gender;
+
+-- 3. Média de idade e salário
+SELECT AVG(age) AS avg_age, AVG(monthly_income) AS avg_salary
+FROM tabela_rh;
+
+-- 4. Média de salário por área
+SELECT job_role, AVG(monthly_income) AS avg_salary
+FROM tabela_rh_textual
+GROUP BY job_role;
+
+-- 5. Distribuição por estado civil
+SELECT marital_status, COUNT(*) AS total
+FROM tabela_rh_textual
+GROUP BY marital_status;
+
+-- Métricas de satisfação e performance
+-- 6. Média de satisfação por área (job_role)
+SELECT job_role, AVG(
+    CASE job_satisfaction
+        WHEN 'Low' THEN 2
+        WHEN 'Medium' THEN 3
+        WHEN 'High' THEN 4
+        WHEN 'Very High' THEN 5
+    END
+) AS avg_satisfaction
+FROM tabela_rh_textual
+GROUP BY job_role;
+
+-- 7. Média de performance por nível de cargo (job_level):
+SELECT job_level, AVG(
+        CASE performance_rating
+            WHEN 'Below Average' THEN 1
+            WHEN 'Low' THEN 2
+            WHEN 'Average' THEN 3
+            WHEN 'High' THEN 4
+        END
+    ) AS avg_performance
+FROM tabela_rh_textual
+GROUP BY job_level;
+
+-- 8. Percentual de funcionários insatisfeitos (Low ou Medium) que fizeram overtime:
+SELECT COUNT(*) FILTER (
+        WHERE job_satisfaction IN ('Medium', 'Low') 
+          AND overtime='Yes'
+    ) * 100.0 / COUNT(*) AS pct_insatis_overtime
+FROM tabela_rh_textual;
+
+-- Metricas de carreira
+-- 9. Número médio de promoções por nível de cargo:
+SELECT job_level, AVG(number_of_promotions) AS avg_promotions
+FROM tabela_rh_textual
+GROUP BY job_level;
+
+-- 10. Tempo médio na empresa por nível de cargo:
+SELECT job_level, AVG(years_at_company) AS avg_years
+FROM tabela_rh_textual
+GROUP BY job_level;
+
+-- 11. Distribuição por liderança e inovação
+SELECT leadership_opportunities, 
+    COUNT(*) AS total_leadership,
+    SUM(CASE WHEN leadership_opportunities='Yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*) AS pct_leadership,
+    innovation_opportunities,
+    COUNT(*) AS total_innovation,
+    SUM(CASE WHEN innovation_opportunities='Yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*) AS pct_innovation
+FROM tabela_rh_textual
+GROUP BY leadership_opportunities, innovation_opportunities;
+
+-- Métricas de turnover / atrição
+-- 12. Número de funcionários que saíram (attrition):
+SELECT COUNT(*) AS left_employees
+FROM tabela_rh_textual
+WHERE attrition = 'Left';
+
+-- 13. Percentual de saída por área:
+SELECT job_role, 
+       COUNT(*) FILTER (WHERE attrition='Left') * 100.0 / COUNT(*) AS pct_left
+FROM tabela_rh_textual
+GROUP BY job_role;
+
+-- 14. Turnover por nível de satisfação:
+SELECT job_satisfaction,
+    COUNT(*) FILTER (WHERE attrition = 'Left') * 100.0 / COUNT(*) AS pct_left
+FROM tabela_rh_textual
+GROUP BY job_satisfaction;
+
+-- Métricas de distância e trabalho remoto
+-- 15. Média de distância de casa por quem trabalha remoto:
+SELECT job_level, AVG(distance_from_home) AS avg_distance
+FROM tabela_rh_textual
+GROUP BY job_level;
+
+-- 16. Percentual de quem faz overtime por quem trabalha remoto:
+SELECT remote_work,
+    COUNT(*) FILTER (WHERE overtime = 'Yes') * 100.0 / COUNT(*) AS pct_overtime
+FROM tabela_rh_textual
+GROUP BY remote_work;

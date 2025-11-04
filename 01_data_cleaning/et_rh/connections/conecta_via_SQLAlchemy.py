@@ -12,6 +12,12 @@ porta = "5432"
 
 engine = create_engine(f"postgresql://{usuario}:{senha}@{host}:{porta}/{banco}")
 
-df.to_sql("tabela_rh", engine, if_exists="replace", index=False)
+def get_engine():
+    # Troque usuario, senha e banco pelo que você usa
+    engine = create_engine("postgresql+psycopg2://postgres:senha@localhost:5432/rh_db")
+    return engine
+
+# Código comentado para execução do arquivo generate_charts.py
+#df.to_sql("tabela_rh", engine, if_exists="replace", index=False)
 
 print("Dados carregados com sucesso!")

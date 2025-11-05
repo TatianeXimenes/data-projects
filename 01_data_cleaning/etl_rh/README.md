@@ -5,7 +5,7 @@ O objetivo é construir uma pipeline reprodutível, gerar métricas relevantes d
 
 # Arquitetura do Projeto
 
-![Diagrama](./reports/diagrama_etl_rh.png)
+![Diagrama](./reports/images/diagrama_etl_rh.png)
 
 # Fluxo do Projeto
 
@@ -48,39 +48,39 @@ O objetivo é construir uma pipeline reprodutível, gerar métricas relevantes d
 ## Visualizações e Insights
 
 ### Média salarial por cargo
-![Média salarial por cargo](./reports/avg_income_by_role.png)
+![Média salarial por cargo](./reports/images/avg_income_by_role.png)
 
 ### Performance média por nível
-![Performance média por nível](./reports/avg_performance_by_level.png)
+![Performance média por nível](./reports/images/avg_performance_by_level.png)
 
 ### Média de promoções por nível
-![Promoções por nível](./reports/avg_promotions_by_level.png)
+![Promoções por nível](./reports/images/avg_promotions_by_level.png)
 
 ### Satisfação média por cargo
-![Satisfação média por cargo](./reports/avg_satisfaction_by_role.png)
+![Satisfação média por cargo](./reports/images/avg_satisfaction_by_role.png)
 
 ### Tempo médio na empresa por nível
-![Tempo médio por nível](./reports/avg_years_by_level.png)
+![Tempo médio por nível](./reports/images/avg_years_by_level.png)
 
 ### Distribuição de colaboradores por cargo
-![Distribuição por cargo](./reports/distribution_by_role.png)
+![Distribuição por cargo](./reports/images/distribution_by_role.png)
 
 ### Distribuição por nível educacional
-![Distribuição educacional](./reports/education_distribution.png)
+![Distribuição educacional](./reports/images/education_distribution.png)
 
 ### Oportunidades de liderança
-![Oportunidades de liderança](./reports/leadership_opportunities.png)
+![Oportunidades de liderança](./reports/images/leadership_opportunities.png)
 
 ### Horas extras vs trabalho remoto
-![Horas extras vs remoto](./reports/overtime_vs_remote.png)
+![Horas extras vs remoto](./reports/images/overtime_vs_remote.png)
 
 ### Turnover por estado civil
-![Turnover por estado civil](./reports/turnover_by_marital.png)
+![Turnover por estado civil](./reports/images/turnover_by_marital.png)
 
 ### Turnover por cargo
-![Turnover por cargo](./reports/turnover_by_role.png)
+![Turnover por cargo](./reports/images/turnover_by_role.png)
 
 ### Turnover por nível de satisfação
-![Turnover por satisfação](./reports/turnover_by_satisfaction.png)
+![Turnover por satisfação](./reports/images/turnover_by_satisfaction.png)
 
 

@@ -1,0 +1,180 @@
+---
+title: "Análise de Marketing Digital"
+author: "Tatiane"
+output:
+  html_document:
+    theme: flatly
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+library(data.table)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(corrplot)
+library(pROC)
+```
+
+# 🔍 **Análise de Marketing Digital**
+
+## 📁 Leitura da Base
+
+```{r}
+setwd("/home/tatiane/data-projects/02_data_analysis/etl_marketing_digital/raw/data/")
+df <- fread("digital_marketing_campaign_dataset.csv", header = TRUE, dec = ".")
+```
+
+---
+
+## 📊 1. Análise Exploratória
+
+### **Taxa geral de conversão**
+
+```{r}
+mean(df$Conversion)
+```
+
+**Comentário:** Taxa geral de conversão dá uma visão inicial do desempenho geral das campanhas.
+
+---
+
+### **Distribuição das variáveis principais**
+
+```{r}
+df %>%
+  select(Age, Income, AdSpend, ClickThroughRate, ConversionRate, TimeOnSite) %>%
+  gather(variable, value) %>%
+  ggplot(aes(value)) +
+  geom_histogram(fill = "#69b3a2", color = "white") +
+  facet_wrap(~variable, scales = "free") +
+  theme_minimal()
+```
+
+**Comentário:** A distribuição mostra como cada variável se comporta e ajuda a identificar assimetrias e padrões gerais.
+
+---
+
+## 🔗 Matriz de Correlação
+
+```{r}
+num_vars <- df %>%
+  select(Age, Income, AdSpend, ClickThroughRate, ConversionRate,
+         WebsiteVisits, PagesPerVisit, TimeOnSite,
+         EmailOpens, EmailClicks, PreviousPurchases, LoyaltyPoints)
+
+corr_matrix <- cor(num_vars, use = "complete.obs")
+corrplot(corr_matrix, method = "color", tl.cex = 0.7)
+```
+
+**Comentário:** A matriz revela relações lineares entre variáveis e destaca possíveis preditores relevantes.
+- As correlações mais visíveis ocorrem entre métricas que pertencem ao mesmo tipo de comportamento: navegação (PagesPerVisit e TimeOnSite) e e-mail (EmailOpens e EmailClicks). Isso indica consistência nos dados e coerência com o modelo de funil digital.
+- A ausência de correlações altas (>0.7) entre variáveis reduz preocupação com multicolinearidade, o que é positivo para modelos como regressão logística.
+- A baixa correlação entre AdSpend e outras variáveis sugere que investimento não está diretamente associado a comportamento ou engajamento, mas pode impactar conversão via outros mecanismos (ex.: segmentação de público).
+- A correlação fraca entre Income e comportamento digital indica que perfil socioeconômico pode não ser o principal fator de engajamento nesses dados.
+- O padrão diagonal clara e ausência de blocos densos reforça que as variáveis são complementares e não redundantes.
+
+---
+
+## 🎯 Correlação das Variáveis com Conversion
+
+```{r}
+correlations_to_target <- sapply(num_vars, function(x)
+  cor(x, df$Conversion, method = "pearson", use = "complete.obs")
+)
+
+sort(correlations_to_target, decreasing = TRUE)
+```
+
+**Comentário:** As correlações ajudam a identificar fatores com maior impacto direto na conversão.
+- O engajamento pós-clique (TimeOnSite, PagesPerVisit, EmailClicks) parece mais relevante do que características demográficas.
+- Há um padrão indicando que interações diretas do usuário (cliques, tempo gasto, aberturas) são melhores indicadores de conversão do que características permanentes.
+- Mesmo as variáveis mais correlacionadas não ultrapassam 0.13, reforçando que a conversão depende da combinação de múltiplos fatores e não de um único driver.
+
+---
+
+## 📈 Taxa de Conversão por Canal
+
+```{r}
+df %>%
+  group_by(CampaignChannel) %>%
+  summarise(ConversionRate = mean(Conversion),
+            Count = n()) %>%
+  arrange(desc(ConversionRate))
+```
+
+**Comentário:** Canais com maior taxa de conversão indicam onde o investimento tende a ser mais eficiente.
+
+```{r}
+ggplot(df, aes(x = CampaignChannel, fill = factor(Conversion))) +
+  geom_bar(position = "fill") +
+  labs(y = "Proporção de Conversão", fill = "Convertido") +
+  theme_minimal()
+```
+
+**Comentário:** O gráfico mostra a proporção de conversão em cada canal, facilitando comparações rápidas.
+
+---
+
+## 🧪 Teste Qui-Quadrado
+
+```{r}
+chisq.test(table(df$CampaignType, df$Conversion))
+```
+
+**Comentário:** O teste verifica se há relação significativa entre tipo de campanha e taxa de conversão. O teste qui-quadrado apresentou p-value < 2.2e-16, indicando forte evidência de associação entre o tipo de campanha e a taxa de conversão. Isso significa que diferentes categorias de campanha apresentam padrões de conversão significativamente distintos.
+
+---
+
+## 📉 Relação AdSpend × ConversionRate
+
+```{r}
+ggplot(df, aes(x = AdSpend, y = ConversionRate)) +
+  geom_point(alpha = 0.6) +
+  geom_smooth(method = "lm", color = "red") +
+  theme_minimal()
+```
+
+**Comentário:** Mostra como o investimento influencia a taxa de conversão, indicando possíveis retornos crescentes ou decrescentes. Mesmo com aumento no investimento (AdSpend), a taxa de conversão se mantém praticamente constante, indicando que o investimento isolado não explica a variação na conversão.
+
+---
+
+## 📈 Relação CTR × ConversionRate
+
+```{r}
+ggplot(df, aes(x = ClickThroughRate, y = ConversionRate)) +
+  geom_point(alpha = 0.6, color = "#0073C2FF") +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_minimal()
+```
+
+**Comentário:** Analisa se um maior engajamento (CTR) tende a aumentar a taxa de conversão. A ausência de tendência na linha de regressão mostra que CTR não explica a variação na taxa de conversão. Isso pode ocorrer quando os usuários clicam, mas não encontram relevância no conteúdo ou quando outros fatores (p.ex., segmentação, experiência no site) pesam mais no resultado.
+
+---
+
+# 🔍 Modelagem Preditiva — Regressão Logística
+
+```{r}
+model <- glm(Conversion ~ Age + Income + AdSpend + ClickThroughRate +
+               TimeOnSite + EmailClicks + PreviousPurchases + LoyaltyPoints,
+             data = df, family = binomial)
+
+summary(model)
+```
+
+**Comentário:** A regressão identifica quais variáveis têm maior impacto na probabilidade de conversão. O modelo revela que a conversão é principalmente influenciada por fatores comportamentais e de engajamento, enquanto características demográficas não exercem efeito relevante. As variáveis AdSpend, ClickThroughRate, TimeOnSite, EmailClicks, PreviousPurchases e LoyaltyPoints apresentam efeitos positivos e altamente significativos, indicando que ações que estimulam engajamento e fidelização têm maior impacto na performance de conversão. O ajuste do modelo é satisfatório, mostrando melhoria substancial em relação ao modelo nulo.
+
+---
+
+## 📏 Avaliação do Modelo — ROC e AUC
+
+```{r}
+df$pred <- predict(model, type = "response")
+
+roc_obj <- roc(df$Conversion, df$pred)
+plot(roc_obj, col = "blue")
+auc(roc_obj)
+```
+
+**Comentário:** A curva ROC e o AUC medem o quão bem o modelo diferencia conversões de não conversões. A curva ROC evidencia que o modelo possui boa capacidade de classificação, já que a linha azul se afasta da diagonal aleatória. O AUC indica desempenho satisfatório na distinção entre usuários que convertem e os que não convertem.
+

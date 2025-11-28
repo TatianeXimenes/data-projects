@@ -1,0 +1,12 @@
+var,new_var,new_type,map_values
+Ano,ano,Integer,{}
+V2007,sexo,Byte,"{'1':'Homem','2':'Mulher'}"
+V2010,raca_cor,Byte,"{'1':'Branca','2':'Preta',’3':'Amarela','4':'Parda','5':'Indigena','9':'Ignorado'}"
+V2009,idade_dt_referencia,integer,{}
+V2001,qtd_pessoa_domicilio,Integer,{}
+V2005,condicao_domicilio,Byte,"{'01':'Pessoa responsável pelo domicílio','02':'Cônjuge de sexo diferente','03':'Cônjuge do mesmo sexo','04':'Filho(a) de ambos','05':'Filho(a) só do responsável','06':'Enteado(a)','07':'Genro ou nora','08':'Pai, mãe, padrasto ou madrasta','09':'Sogro(a)','10':'Neto(a)','11':'Bisneto(a)','12':'Irmã(o)','13':'Avô ou avó','14':'Outro parente','15':'Agregado(a) - Nãocompartilha despesas','16':'Convivente - Compartilha despesas','17':'Pensionista','18':'Empregado(a) doméstico(a)','19':'Parente do(a) empregado(a) doméstico(a)'}"
+V1022,situacao_domicilio,Byte,"{'1':'Urbana','2':'Rural'}"
+UF,uf,Byte,"{'11’:'Rondônia','12:'Acre','13:'Amazonas','14:'Roraima','15:'Pará','16:'Amapá','17:'Tocantins','21:'Maranhão','22:'Piauí','23:'Ceará','24:'Rio Grande do Norte','25:'Paraíba','26:'Pernambuco','27:'Alagoas','28:'Sergipe','29:'Bahia','31:'Minas Gerais','32:'Espírito Santo','33:'Rio de Janeiro','35:'São Paulo','41:'Paraná','42:'Santa Catarina','43:'Rio Grande do Sul','50:'Mato Grosso do Sul','51:'Mato Grosso','52:'Goiás','53:'Distrito Federal'}"
+VD4019,rmh_todos_trabalhos,float,{}
+V1027,peso_domicilio_pessoa,float,{}
+VD4015,tp_remuneracao_habitual,Byte,"{'1':'Remuneração em dinheiro, produtos ou mercadorias no trabalho principal','2':'Remuneração em benefícios ou sem remuneração no trabalho principal'}"

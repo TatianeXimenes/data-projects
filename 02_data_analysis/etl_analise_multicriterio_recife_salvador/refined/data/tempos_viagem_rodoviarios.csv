@@ -1,0 +1,11 @@
+origem,destino,estado_destino,tempo_horas
+Salvador,Salvador,BA,0.5
+Salvador,Recife,PE,8.0
+Salvador,Fortaleza,CE,15.0
+Salvador,Aracaju,SE,4.0
+Salvador,Maceió,AL,9.0
+Recife,Salvador,BA,8.0
+Recife,Recife,PE,0.5
+Recife,Fortaleza,CE,11.0
+Recife,Aracaju,SE,8.5
+Recife,Maceió,AL,4.0

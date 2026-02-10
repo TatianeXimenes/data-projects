@@ -70,7 +70,7 @@ Todos os KPIs são **reativos aos filtros** aplicados.
 ### Como Executar o Projeto
 
 1. Clone o repositório:
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
+git clone https://github.com/TatianeXimenes/04_dashboards/01_dashboard_r_shiny.git
 
 2. Abra o R ou RStudio
 3. Instale os pacotes necessários (se ainda não tiver):

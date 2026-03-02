@@ -11,6 +11,7 @@ Aqui você encontrará análises, pipelines ETL, dashboards e modelos preditivos
 | Categoria | Projeto | Descrição | Tecnologias |
 |------------|----------|------------|--------------|
 | 🧹 Limpeza e ETL | [HR Data Cleaning](./01_data_cleaning/etl_rh) | Pipeline completo de extração, transformação e carga (ETL) de dados de RH. | Python, SQL |
+| 🧹 Limpeza e ETL | [Data Quality](./01_data_cleaning/etl_data_quality) | Pipeline transformação e carga (ETL), limpeza e padronização. | Python, ML |
 | 📊 Análise Estatística | [Marketing Insights](./02_data_analysis/marketing_analysis_R) | Análise exploratória e visual de dados de campanhas de marketing. | R, ggplot2 |
 | 🤖 Machine Learning | [Churn Prediction (Databricks)](./03_machine_learning/churn_prediction_databricks) | Modelo preditivo de churn em ambiente Databricks. | PySpark, MLlib, Cloud |
 | 📈 Dashboard Interativo | [Business KPIs Dashboard](./04_dashboards/business_kpis_dashboard) | Dashboard dinâmico com métricas de negócio. | Python, Streamlit |

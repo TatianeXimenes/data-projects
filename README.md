@@ -15,6 +15,7 @@ Aqui você encontrará análises, pipelines ETL, dashboards e modelos preditivos
 | 📊 Análise Estatística | [Marketing Insights](./02_data_analysis/marketing_analysis_R) | Análise exploratória e visual de dados de campanhas de marketing. | R, ggplot2 |
 | 📊 Análise Estatística | [Analysis of Persistence in Poverty](./02_data_analysis/etl_pnad_continua) | Análise exploratória para saber a probabilidade de se permanecer na pobreza. | R, PySpark, Python, ML, Parquet |
 | 📊 Análise Estatística | [Analysis of Churn in Credit Cards](./02_data_analysis/etl_cartao_credito) | Análise exploratória e visual de dados de campanhas de marketing. | Python, ML |
+| 📊 Análise Estatística | [Multicriteria Analysis](./02_data_analysis/etl_analise_multicriterio_recife_salvador) | Análise para seleção de localização para novo Centro de Distribuição. | Python |
 | 🤖 Machine Learning | [Churn Prediction (Databricks)](./03_machine_learning/churn_prediction_databricks) | Modelo preditivo de churn em ambiente Databricks. | PySpark, MLlib, Cloud |
 | 📈 Dashboard Interativo | [Business KPIs Dashboard](./04_dashboards/business_kpis_dashboard) | Dashboard dinâmico com métricas de negócio. | Python, Streamlit |
 | 🎙️ Comunicação e Divulgação | [Presentation Materials](./05_presentation/) | Roteiros, posts e vídeos explicando cada projeto. | — |

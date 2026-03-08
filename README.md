@@ -19,7 +19,6 @@ Aqui você encontrará análises, pipelines ETL, dashboards e modelos preditivos
 | 🤖 Machine Learning | [Churn Prediction (Databricks)](./03_machine_learning/churn_prediction_databricks) | Modelo preditivo de churn em ambiente Databricks. | PySpark, MLlib, Cloud |
 | 🤖 Machine Learning | [Customer Value Classification](./03_machine_learning/etl_customer_value_classfication) | Modelo preditivo para classificar clientes em diferentes níveis de valor para o negócio. | PySpark, MLlib, Scikit-learn |
 | 📈 Dashboard Interativo | [Business KPIs Dashboard](./04_dashboards/business_kpis_dashboard) | Dashboard dinâmico com métricas de negócio. | Python, Streamlit |
-| 🎙️ Comunicação e Divulgação | [Presentation Materials](./05_presentation/) | Roteiros, posts e vídeos explicando cada projeto. | — |
 
 ---
 

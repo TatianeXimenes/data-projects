@@ -17,6 +17,7 @@ Aqui você encontrará análises, pipelines ETL, dashboards e modelos preditivos
 | 📊 Análise Estatística | [Analysis of Churn in Credit Cards](./02_data_analysis/etl_cartao_credito) | Análise exploratória e visual de dados de campanhas de marketing. | Python, ML |
 | 📊 Análise Estatística | [Multicriteria Analysis](./02_data_analysis/etl_analise_multicriterio_recife_salvador) | Análise para seleção de localização para novo Centro de Distribuição. | Python |
 | 🤖 Machine Learning | [Churn Prediction (Databricks)](./03_machine_learning/churn_prediction_databricks) | Modelo preditivo de churn em ambiente Databricks. | PySpark, MLlib, Cloud |
+| 🤖 Machine Learning | [Customer Value Classification](./03_machine_learning/etl_customer_value_classfication) | Modelo preditivo para classificar clientes em diferentes níveis de valor para o negócio. | PySpark, MLlib, Scikit-learn |
 | 📈 Dashboard Interativo | [Business KPIs Dashboard](./04_dashboards/business_kpis_dashboard) | Dashboard dinâmico com métricas de negócio. | Python, Streamlit |
 | 🎙️ Comunicação e Divulgação | [Presentation Materials](./05_presentation/) | Roteiros, posts e vídeos explicando cada projeto. | — |
 

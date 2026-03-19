@@ -52,3 +52,7 @@ O objetivo do dashboard é transformar os dados em insights acionáveis, permiti
 2. padrões de comportamento financeiro entre diferentes segmentos
 3. sinais de risco relacionados à inatividade
 4. oportunidades de melhoria em estratégias de relacionamento com clientes
+
+### Dashboard
+Você pode consultar o dashboard final atraves do link abaixo:
+https://public.tableau.com/app/profile/tatiane.gabriel/viz/customer-value-dashboard/DashboardFinal

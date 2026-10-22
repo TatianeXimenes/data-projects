@@ -1,4 +1,8 @@
 # Databricks notebook source
+# /// script
+# [tool.databricks.environment]
+# environment_version = "6"
+# ///
 # MAGIC %md
 # MAGIC # 07 - Validação cruzada da camada Silver
 # MAGIC Checagens que envolvem mais de uma tabela: integridade referencial e reconciliação entre
@@ -91,5 +95,46 @@ display(listings.join(reviews.select("listing_id").distinct(), "listing_id", "le
 
 # COMMAND ----------
 
-dq_flush()
+diag = (
+    listings.select("listing_id", "currency", "single_fee_structure", "cleaning_fee",
+                    "ttm_revenue", "ttm_revpar", "ttm_total_days")
+    .join(cal, "listing_id")
+    .filter(F.col("cal_months") == 12)
+    .withColumn("ratio_ttm_vs_calendar",
+                F.when(F.col("cal_revenue") > 0, F.col("ttm_revenue") / F.col("cal_revenue")))
+    .withColumn("ratio_ttm_vs_revpar",
+                F.when(F.col("ttm_revpar") > 0,
+                       F.col("ttm_revenue") / (F.col("ttm_revpar") * F.col("ttm_total_days"))))
+)
 
+display(diag.select("ratio_ttm_vs_calendar", "ratio_ttm_vs_revpar")
+        .summary("min", "25%", "50%", "75%", "max"))
+
+display(diag.groupBy("single_fee_structure")
+        .agg(F.count("*").alias("n"),
+             F.percentile_approx("ratio_ttm_vs_calendar", 0.5).alias("mediana_ratio")))
+
+# COMMAND ----------
+
+from dateutil.relativedelta import relativedelta
+
+past_start = past.agg(F.min("month_start")).first()[0]
+past_end = past.agg(F.max("month_start")).first()[0]
+future_start = future.agg(F.min("month_start")).first()[0]
+
+dq_check("silver", SILVER_TABLES["future_rates"], "future começa no mês seguinte ao fim do past",
+         0 if future_start == past_end + relativedelta(months=1) else 1, severity="warn")
+
+dq_check("silver", SILVER_TABLES["reviews"], "reviews dentro da janela do past calendar",
+         reviews.filter((F.col("month_start") < past_start) | (F.col("month_start") > past_end)).count(),
+         severity="warn")
+
+rev_sum = reviews.groupBy("listing_id").agg(F.sum("num_reviews").alias("reviews_window"))
+dq_check("silver", SILVER_TABLES["reviews"], "reviews na janela <= num_reviews total do anúncio",
+         listings.select("listing_id", "num_reviews").join(rev_sum, "listing_id")
+         .filter(F.col("reviews_window") > F.col("num_reviews")).count(),
+         severity="warn")
+
+# COMMAND ----------
+
+dq_flush()

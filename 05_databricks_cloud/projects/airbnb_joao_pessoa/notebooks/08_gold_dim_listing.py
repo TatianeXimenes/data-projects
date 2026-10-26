@@ -11,7 +11,7 @@
 # MAGIC - `reviews_in_period`: reviews no período do calendário (proxy de estadias)
 # MAGIC - `in_scope`: imóvel inteiro + dentro da área de estudo + 12 meses de calendário
 # MAGIC
-# MAGIC `host_name` não é levado para a gold (dado pessoal).
+# MAGIC `host_name` não é levado para a gold, por se tratar de dado pessoal.
 
 # COMMAND ----------
 

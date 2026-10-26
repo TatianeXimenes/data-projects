@@ -1,4 +1,8 @@
 # Databricks notebook source
+# /// script
+# [tool.databricks.environment]
+# environment_version = "6"
+# ///
 # MAGIC %md
 # MAGIC # 08 - Gold: dimensão de anúncios
 # MAGIC Uma linha por anúncio, com:
@@ -84,4 +88,3 @@ dq_flush()
 
 print("Anúncios no escopo:", d.filter("in_scope").count(), "de", d.count())
 display(d.groupBy("room_type", "within_study_area", "is_full_year").count().orderBy("room_type"))
-

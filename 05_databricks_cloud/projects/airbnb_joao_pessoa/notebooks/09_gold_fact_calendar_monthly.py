@@ -1,9 +1,13 @@
 # Databricks notebook source
+# /// script
+# [tool.databricks.environment]
+# environment_version = "6"
+# ///
 # MAGIC %md
 # MAGIC # 09 - Gold: fato de calendário mensal
 # MAGIC União de past e future (`period_type`), enriquecida com `area_cell` e `in_scope` da dimensão.
 # MAGIC
-# MAGIC Cuidado na análise: linhas `future` mostram só o que já estava reservado em `snapshot_date`.
+# MAGIC Linhas `future` mostram só o que já estava reservado em `snapshot_date`.
 # MAGIC Use-as para ritmo de reservas, não para comparar demanda com o passado.
 
 # COMMAND ----------
@@ -43,4 +47,3 @@ dq_flush()
 
 display(f.groupBy("period_type").agg(F.min("month_start").alias("de"), F.max("month_start").alias("ate"),
                                      F.countDistinct("listing_id").alias("listings")))
-

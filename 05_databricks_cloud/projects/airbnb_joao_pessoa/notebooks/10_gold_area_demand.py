@@ -1,4 +1,8 @@
 # Databricks notebook source
+# /// script
+# [tool.databricks.environment]
+# environment_version = "6"
+# ///
 # MAGIC %md
 # MAGIC # 10 - Gold: onde mais se aluga
 # MAGIC Responde à pergunta do projeto por área (`area_cell`), usando só o calendário **passado** e anúncios `in_scope`.
@@ -104,4 +108,3 @@ dq_check("gold", GOLD_TABLES["area_demand_summary"], "ocupação bruta entre 0 e
 dq_check("gold", GOLD_TABLES["area_demand_summary"], "soma de n_listings == anúncios in_scope",
          abs(s.agg(F.sum("n_listings")).first()[0] - dim.count()))
 dq_flush()
-
